@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitch API Authentication</title>
+    <script type="text/javascript">
+      // Parse the authentication token from the URL fragment
+      const hash = window.location.hash.substring(1);
+      const tokenParams = new URLSearchParams(hash);
+      const accessToken = tokenParams.get('access_token');
+
+      // Save the authentication token in localStorage
+      localStorage.setItem('twitchAccessToken', accessToken);
+
+      // Redirect the user to the homepage or another appropriate URL
+      window.location.href = '/';
+    </script>
+  </head>
+  <body>
+    <p>Please wait while we process your Twitch API authentication.</p>
+  </body>
+</html>
